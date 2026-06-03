@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filiems-Tool // OSINT Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">▪</span>
+                <h2>FILIEMS</h2>
+            </div>
+            <nav class="menu">
+                <button class="menu-item active" data-module="username">Поиск по нику</button>
+                <button class="menu-item" data-module="ip">Поиск по IP</button>
+                <button class="menu-item" data-module="email">Поиск по почте</button>
+                <button class="menu-item" data-module="utils">Утилиты</button>
+            </nav>
+            <div class="sidebar-footer">
+                <p>filiems-Tool v4.0</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <section class="google-search-container" id="search-section">
+                <div class="google-logo">filiems-Tool</div>
+                
+                <div class="search-wrapper">
+                    <div class="search-box">
+                        <span class="search-icon">🔎</span>
+                        <input type="text" id="main-input" placeholder="Введите никнейм для анализа...">
+                    </div>
+                    <div class="search-buttons">
+                        <button id="execute-btn" class="google-btn">Поиск в сети</button>
+                        <button id="clear-btn" class="google-btn muted">Очистить</button>
+                    </div>
+                </div>
+
+                <div id="notification-box" class="notify-container hidden"></div>
+            </section>
+
+            <section class="utils-container hidden" id="utils-section">
+                <div class="section-header">
+                    <h3>Встроенные OSINT Инструменты</h3>
+                    <span class="counter">12 утилит</span>
+                </div>
+                <div class="grid-layout" id="utils-grid"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
