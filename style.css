@@ -1,0 +1,313 @@
+:root {
+    --bg-main: #000000;       
+    --bg-card: #0a0a0a;       
+    --bg-sidebar: #050505;    
+    --accent: #ffffff;        
+    --text-main: #f5f5f5;     
+    --text-muted: #666666;    
+    --border: #1f1f1f;        
+    --border-focus: #444444;  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    flex-shrink: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.brand h2 {
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.menu-item {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover, .menu-item.active {
+    color: var(--accent);
+    background-color: var(--bg-card);
+    box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.sidebar-footer {
+    color: var(--text-muted);
+    font-size: 11px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+}
+
+/* Основной контент */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стиль Google Поиска */
+.google-search-container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.google-logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.search-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 14px 22px;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.search-box:focus-within {
+    border-color: var(--border-focus);
+    background-color: #0d0d0d;
+}
+
+.search-icon {
+    color: var(--text-muted);
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+}
+
+.search-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.google-btn {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.google-btn:hover {
+    border-color: var(--border-focus);
+    background-color: #111;
+}
+
+.google-btn.muted {
+    color: var(--text-muted);
+}
+
+/* Одиночное Уведомление */
+.notify-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notify-container.hidden {
+    display: none;
+}
+
+.notify-text h4 {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.notify-text p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.launch-btn {
+    background-color: var(--accent);
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Сетка Утилит */
+.utils-container {
+    width: 100%;
+    max-width: 1100px;
+    align-self: flex-start;
+}
+
+.utils-container.hidden {
+    display: none;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.section-header h3 {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.counter {
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.osint-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+}
+
+.card-top h4 {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.card-top p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tag {
+    font-size: 10px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.visit-link {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+    .app-container { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+    .main-content { padding: 20px; }
+}
